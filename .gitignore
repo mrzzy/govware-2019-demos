@@ -4,3 +4,5 @@ tag*
 # vim sessions
 .session.vim
 
+# weblogic install file
+weblogic/victim/wls1036_generic.jar

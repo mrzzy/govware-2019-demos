@@ -1,0 +1,28 @@
+#
+# Govware Exploits
+# Oracle WebLogic Server Exploit
+# Docker Compose 
+#
+
+version: "3"
+services:
+  attacker:
+    build:
+      context: ./attacker
+    image: mrzzy/govware-weblogic-attacker
+    networks:
+      - vlan
+    # wait for attacker to exec into the container
+    command: "sleep infinity"
+    expose:
+      - "4444"
+  victim:
+    build:
+      context: ./victim
+    image: mrzzy/govware-weblogic-victim
+    networks:
+      - vlan
+    ports:
+      - "7001:7001"
+networks:
+  vlan:
