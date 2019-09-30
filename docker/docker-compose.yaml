@@ -1,0 +1,27 @@
+#
+# Govware Exploits
+# Docker Runc Exploit
+# Docker Compose 
+#
+
+version: "3"
+services:
+  attacker:
+    build:
+      context: ./attacker
+    image: mrzzy/govware-docker-attacker
+    privileged: true
+    networks:
+      - vlan
+    volumes:
+      - "attacker/exploit:/exploit"
+  victim:
+    build:
+      context: ./victim
+    image: mrzzy/govware-docker-victim
+    privileged: true
+    networks:
+      - vlan
+
+networks:
+  vlan:

@@ -36,3 +36,6 @@ The project is structured as follows:
         - `attacker/` - attacker container
         - `victim/` - victim container
 - `docker/` - Docker Runc CVE-2019-5736
+    - `containers/` - containers used in the exploit 
+        - `attacker/` - attacker container
+        - `victim/` - victim container
