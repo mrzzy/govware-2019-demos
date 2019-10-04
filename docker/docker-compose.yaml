@@ -14,7 +14,9 @@ services:
     networks:
       - vlan
     volumes:
-      - "attacker/exploit:/exploit"
+      - "./attacker/exploit:/exploit"
+    expose:
+    - "5005"
   victim:
     build:
       context: ./victim
